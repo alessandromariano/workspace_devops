@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/sysfiorde-faturamento-ws/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka_server/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-bi/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-bussiness-partner-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-platform-core/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-business-partner-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-master-data-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-proposal-registration-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-proposal-registration/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-business-proposal-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-handle-exception/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-platform-connector-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-connector-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-teste-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-commons-utils/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-commons-exception/pom.xml" />
+        <option value="$PROJECT_DIR$/sirius-tariff-api/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

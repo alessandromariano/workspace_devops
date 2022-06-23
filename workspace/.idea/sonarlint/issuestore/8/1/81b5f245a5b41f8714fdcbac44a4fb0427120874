@@ -1,0 +1,15 @@
+
+’
+java:S1488m"pImmediately return this expression instead of assigning it to the temporary variable "businessPartnerCustomers".(®çü…şÿÿÿÿ8„àÕË–0
+U
+java:S3655¡"7Call "Optional#isPresent()" before accessing the value.(ï‹›î8ÎãÕË–0
+N
+java:S3655«"7Call "Optional#isPresent()" before accessing the value.(ôáÚ³
+\
+java:S3655İ"@Call "proposalStatusDTO.isPresent()" before accessing the value.(™¤Äóùÿÿÿÿ
+S
+java:S3655h"6Call "service.isPresent()" before accessing the value.(¶Õé8ÎãÕË–0
+e
+java:S3655t"CCall "cargoContractingType.isPresent()" before accessing the value.(™úãÅÿÿÿÿÿ8ÍãÕË–0
+Y
+java:S1144Û"BRemove this unused private "convertProposalStatusToEntity" method.(Ææª—

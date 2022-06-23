@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="sirius-business-proposal-api" />
+        <module name="sirius-business-partner-api" />
+        <module name="sirius-teste-api" />
+        <module name="sirius-commons-exception" />
+        <module name="sirius-commons-utils" />
+        <module name="sirius-master-data-api" />
+        <module name="sirius-connector-api" />
+        <module name="sirius-bi" />
+        <module name="sirius-tariff-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-server" target="1.8" />
+      <module name="gateway-server" target="1.8" />
+      <module name="sirius-bi" target="1.8" />
+      <module name="sirius-business-partner-api" target="1.8" />
+      <module name="sirius-business-proposal-api" target="1.8" />
+      <module name="sirius-bussiness-partner-api" target="1.8" />
+      <module name="sirius-commons-exception" target="1.8" />
+      <module name="sirius-commons-utils" target="1.8" />
+      <module name="sirius-config-server" target="1.8" />
+      <module name="sirius-connector-api" target="1.8" />
+      <module name="sirius-handle-exception" target="1.8" />
+      <module name="sirius-master-data-api" target="1.8" />
+      <module name="sirius-master-data-api (1)" target="1.8" />
+      <module name="sirius-platform" target="1.5" />
+      <module name="sirius-platform-connector-api" target="1.8" />
+      <module name="sirius-plt-connector" target="1.8" />
+      <module name="sirius-proposal-registration-api" target="1.8" />
+      <module name="sirius-tariff-api" target="1.8" />
+      <module name="sirius-teste-api" target="1.8" />
+      <module name="sirius-teste-elk-api" target="1.8" />
+      <module name="sysfiorde-faturamento-ws" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka-server" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
+      <module name="sirius-bi" options="-parameters" />
+      <module name="sirius-business-partner-api" options="-parameters" />
+      <module name="sirius-business-proposal-api" options="-parameters" />
+      <module name="sirius-commons-exception" options="-parameters" />
+      <module name="sirius-commons-utils" options="" />
+      <module name="sirius-config-server" options="-parameters" />
+      <module name="sirius-connector-api" options="-parameters" />
+      <module name="sirius-handle-exception" options="-parameters" />
+      <module name="sirius-master-data-api" options="-parameters" />
+      <module name="sirius-master-data-api (1)" options="-parameters" />
+      <module name="sirius-platform-connector-api" options="-parameters" />
+      <module name="sirius-plt-connector" options="-parameters" />
+      <module name="sirius-proposal-registration-api" options="-parameters" />
+      <module name="sirius-tariff-api" options="-parameters" />
+      <module name="sirius-teste-api" options="-parameters" />
+      <module name="sirius-teste-elk-api" options="-parameters" />
+      <module name="sysfiorde-faturamento-ws" options="-parameters" />
+    </option>
+  </component>
+</project>

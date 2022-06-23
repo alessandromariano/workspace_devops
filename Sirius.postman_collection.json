@@ -1,0 +1,1892 @@
+{
+	"info": {
+		"_postman_id": "398ff6e1-c960-4782-966d-9005a4f7607a",
+		"name": "Sirius",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "SiriusMasterDataAPI",
+					"item": [
+						{
+							"name": "Currency",
+							"item": [
+								{
+									"name": "Currency - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://192.168.15.21:53466/currencies/ping",
+											"protocol": "http",
+											"host": [
+												"192",
+												"168",
+												"15",
+												"21"
+											],
+											"port": "53466",
+											"path": [
+												"currencies",
+												"ping"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "New Request",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\":\"ALE\",\r\n    \"description\":\"ALESSANDRO\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "192.168.15.21:53675/currencies",
+											"host": [
+												"192",
+												"168",
+												"15",
+												"21"
+											],
+											"port": "53675",
+											"path": [
+												"currencies"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "OriginDestination",
+							"item": [
+								{
+									"name": "OriginDestination - List",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://ec2-54-94-40-246.sa-east-1.compute.amazonaws.com/sirius-master-data-api/origins/destinations/",
+											"protocol": "http",
+											"host": [
+												"ec2-54-94-40-246",
+												"sa-east-1",
+												"compute",
+												"amazonaws",
+												"com"
+											],
+											"path": [
+												"sirius-master-data-api",
+												"origins",
+												"destinations",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OriginDestination - findOne",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://ec2-54-94-40-246.sa-east-1.compute.amazonaws.com/sirius-master-data-api/origins/destinations/AAB",
+											"protocol": "http",
+											"host": [
+												"ec2-54-94-40-246",
+												"sa-east-1",
+												"compute",
+												"amazonaws",
+												"com"
+											],
+											"path": [
+												"sirius-master-data-api",
+												"origins",
+												"destinations",
+												"AAB"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Transport",
+							"item": [
+								{
+									"name": "Transport - List",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlaTJ0b19qbmNjYy1SRlg5czhrM2c0YVhZUkZZV2tlQ1ZFVTNsUGZVdjR3In0.eyJleHAiOjE2NDM3MjQ3NzYsImlhdCI6MTY0MzcyNDQ3NiwianRpIjoiOGFkODFiOTktMGI3ZS00MzBkLTlkMTEtOTNlYTkxMzY3YTNlIiwiaXNzIjoiaHR0cDovL2VjMi01NC05NC00MC0yNDYuc2EtZWFzdC0xLmNvbXB1dGUuYW1hem9uYXdzLmNvbS9hdXRoL3JlYWxtcy9zaXJpdXMtcGxhdGZvcm0iLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiYjVkMTlmODUtZWIxMi00Y2UzLTg5ZjYtOTQ0ZTM3NGQwZDI2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLW1pY3JvLWdhdGV3YXkiLCJzZXNzaW9uX3N0YXRlIjoiYjA5NThkM2ItYzA3ZS00ZWE2LWI3MzMtNmRhNTI4NWIzMWE4IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJzaXJpdXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJicm9rZXIiOnsicm9sZXMiOlsicmVhZC10b2tlbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctYXBwbGljYXRpb25zIiwidmlldy1jb25zZW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJtYW5hZ2UtY29uc2VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkRldiBTdXBlcmlvciIsInByZWZlcnJlZF91c2VybmFtZSI6ImRldiIsImdpdmVuX25hbWUiOiJEZXYiLCJsb2NhbGUiOiJwdCIsImZhbWlseV9uYW1lIjoiU3VwZXJpb3IifQ.X05jnUQ6xm-Ta9TMBuPzXsbpf45SETbmWRsmFSUL2u_CqjYhu6IFfYIbn3bi_OjfZ5rRZ-dCdO1S9NOaOZla8UE2vkELxujLTCaNN4fCXFqU56lrHpVQ0VFbeS729o7rdIXXImkGgUbh1lGmsoXaEzI-X36fykMzkBUAPCEP7I9nhR9ApAcdr1ykZQYJB62fZEgNCSGQ8R_t2ZB818rNhY34MKQAdlFa6FOaZFMQCrfwi3zbETsE_8M31uzp2ymD1Lt4nyOYbo5JQqv2TQ9-jcGLrULceTz5231Qre-VPdUZ9uDdI3KHkjuUnOsAjDx4_SxZc3S64DzjgDp7wL1-6A",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"LAND\",\r\n    \"description\": \"Rodoviário\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://ec2-54-94-40-246.sa-east-1.compute.amazonaws.com/sirius-master-data-api/currencies/",
+											"protocol": "http",
+											"host": [
+												"ec2-54-94-40-246",
+												"sa-east-1",
+												"compute",
+												"amazonaws",
+												"com"
+											],
+											"path": [
+												"sirius-master-data-api",
+												"currencies",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Incoterm",
+							"item": [
+								{
+									"name": "Incoterm - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlaTJ0b19qbmNjYy1SRlg5czhrM2c0YVhZUkZZV2tlQ1ZFVTNsUGZVdjR3In0.eyJleHAiOjE2NDM3MjUxNzUsImlhdCI6MTY0MzcyNDg3NSwianRpIjoiZTkzYTJjMjMtMzFjZS00NGYwLWFjYTAtYjAwMmY4MzIyNDI1IiwiaXNzIjoiaHR0cDovL2VjMi01NC05NC00MC0yNDYuc2EtZWFzdC0xLmNvbXB1dGUuYW1hem9uYXdzLmNvbS9hdXRoL3JlYWxtcy9zaXJpdXMtcGxhdGZvcm0iLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiYjVkMTlmODUtZWIxMi00Y2UzLTg5ZjYtOTQ0ZTM3NGQwZDI2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLW1pY3JvLWdhdGV3YXkiLCJzZXNzaW9uX3N0YXRlIjoiNGY3MWJiNzYtNDI2NC00ZDM3LWEwYTYtNjcwYzQ1OTEwYTc1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJzaXJpdXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJicm9rZXIiOnsicm9sZXMiOlsicmVhZC10b2tlbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctYXBwbGljYXRpb25zIiwidmlldy1jb25zZW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJtYW5hZ2UtY29uc2VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkRldiBTdXBlcmlvciIsInByZWZlcnJlZF91c2VybmFtZSI6ImRldiIsImdpdmVuX25hbWUiOiJEZXYiLCJsb2NhbGUiOiJwdCIsImZhbWlseV9uYW1lIjoiU3VwZXJpb3IifQ.F_vMuSlyB6IkUJrowZ7ykIeWYmYxmZDfjJrAsnGNzgU3o3d-JwHBddb3GSNmh_3OmT-ihDk2SM21n7vI2D2DzHisgnxdGBrnV2LBDOfEGURZPYPI9gpdWcxliyfr-EPe5Ee-YZwZnJVbcbPnhwIl5QE3wajF3eOo9tW1YIQDIzKxywmiiLJgPPMyZvtyaMipSIBktgPaplvOFy1Uu5VA9LF6C8jDiW3y9Jz3eEdSzSY9DdWfxMRIiwliXPvCIcb7lQZRn3Af-y6IYrKa0yo8UkVEL-zAJkGxEdPRhdpXNsAdThLNNrltQogQnBh_ud1Hj33gLKztsq6bGOnMWD-nNg",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://ec2-54-94-40-246.sa-east-1.compute.amazonaws.com/sirius-master-data-api/incoterms",
+											"protocol": "http",
+											"host": [
+												"ec2-54-94-40-246",
+												"sa-east-1",
+												"compute",
+												"amazonaws",
+												"com"
+											],
+											"path": [
+												"sirius-master-data-api",
+												"incoterms"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "SiriusBusinessProposalAPI",
+					"item": [
+						{
+							"name": "Cost",
+							"item": [
+								{
+									"name": "Cost - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://192.168.15.21:56512/costs",
+											"protocol": "http",
+											"host": [
+												"192",
+												"168",
+												"15",
+												"21"
+											],
+											"port": "56512",
+											"path": [
+												"costs"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cost - Find One",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://192.168.15.21:56512/costs/1",
+											"protocol": "http",
+											"host": [
+												"192",
+												"168",
+												"15",
+												"21"
+											],
+											"port": "56512",
+											"path": [
+												"costs",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Proposal",
+							"item": [
+								{
+									"name": "Import Freight",
+									"item": [
+										{
+											"name": "Proposal - Create",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "{{token_dev}}",
+														"type": "default"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n   \"idProposal\":null,\r\n   \"idProposalImportFreight\":null,\r\n   \"referenceProposal\":\"Ref-000000\",\r\n   \"idBusinessPartnerCostumer\":5,\r\n   \"operationType\":\"FRETE - IMPORTAÇÃO\",\r\n   \"idStatus\":1,\r\n   \"codeUserCreation\":0,\r\n   \"codeRespSeller\":0,\r\n   \"openingDate\":\"2022-05-30T15:10:27.000Z\",\r\n   \"validityDate\":\"2022-06-14T00:00:00.000Z\",\r\n   \"approvalDate\":null,\r\n   \"referenceClientProposal\":\"444\",\r\n   \"generalObservations\":\"\",\r\n   \"internalObservations\":\"\",\r\n   \"requester\":\"test\",\r\n   \"cargoCollectionAddress\":\"\",\r\n   \"costs\":[\r\n      {\r\n         \"id\":null,\r\n         \"idProposal\":null,\r\n         \"idService\":5,\r\n         \"containerType\":null,\r\n         \"idBusinessPartnerAgent\":1,\r\n         \"costType\":\"Origem\",\r\n         \"billingType\":\"CW\",\r\n         \"valuePurchase\":6,\r\n         \"valuePurchasePercent\":0,\r\n         \"valueMinimumPurchase\":6,\r\n         \"valueSale\":6,\r\n         \"valueSalePercent\":0,\r\n         \"valueMinimumSale\":6,\r\n         \"idCurrencyPurchase\":\"BRL\",\r\n         \"idCurrencySale\":\"BRL\",\r\n         \"isPurchase\":true,\r\n         \"isSale\":true\r\n      },\r\n      {\r\n         \"id\":null,\r\n         \"idProposal\":null,\r\n         \"idService\":4,\r\n         \"containerType\":null,\r\n         \"idBusinessPartnerAgent\":0,\r\n         \"costType\":\"Destino\",\r\n         \"billingType\":\"FIXO\",\r\n         \"valuePurchase\":5,\r\n         \"valuePurchasePercent\":0,\r\n         \"valueMinimumPurchase\":5,\r\n         \"valueSale\":5,\r\n         \"valueSalePercent\":0,\r\n         \"valueMinimumSale\":5,\r\n         \"idCurrencyPurchase\":\"BRL\",\r\n         \"idCurrencySale\":\"BRL\",\r\n         \"isPurchase\":true,\r\n         \"isSale\":true\r\n      },\r\n      {\r\n         \"id\":null,\r\n         \"idProposal\":null,\r\n         \"idService\":3,\r\n         \"containerType\":null,\r\n         \"idBusinessPartnerAgent\":0,\r\n         \"costType\":\"Tarifa\",\r\n         \"billingType\":\"FIXO\",\r\n         \"valuePurchase\":null,\r\n         \"valuePurchasePercent\":0,\r\n         \"valueMinimumPurchase\":null,\r\n         \"valueSale\":50,\r\n         \"valueSalePercent\":0,\r\n         \"valueMinimumSale\":5,\r\n         \"idCurrencyPurchase\":\"nul\",\r\n         \"idCurrencySale\":\"BRL\",\r\n         \"isPurchase\":false,\r\n         \"isSale\":true\r\n      }\r\n   ],\r\n   \"totalCosts\":[\r\n      {\r\n         \"id\":null,\r\n         \"idProposal\":null,\r\n         \"costType\":\"Origem\",\r\n         \"idCurrency\":\"BRL\",\r\n         \"valueTotalSale\":350110,\r\n         \"valueTotalPurchase\":350110\r\n      },\r\n      {\r\n         \"id\":null,\r\n         \"idProposal\":null,\r\n         \"costType\":\"Destino\",\r\n         \"idCurrency\":\"BRL\",\r\n         \"valueTotalSale\":5,\r\n         \"valueTotalPurchase\":5\r\n      }\r\n   ],\r\n   \"proposalType\":\"client\",\r\n   \"idTransport\":\"AIR\",\r\n   \"idOrigin\":\"AAG\",\r\n   \"idDestination\":\"AAA\",\r\n   \"idBusinessPartnerAgent\":0,\r\n   \"idIncoterm\":\"CPT\",\r\n   \"cargo\":{\r\n      \"cargo\":\"desc\",\r\n      \"idPackaging\":0,\r\n      \"idContainerType\":\"nul\",\r\n      \"isDangerous\":false,\r\n      \"idImoType\":0,\r\n      \"idTemperature\":11,\r\n      \"idCargoContractingType\":1,\r\n      \"codeUn\":0,\r\n      \"cargoVolumes\":[\r\n         {\r\n            \"id\":null,\r\n            \"idCargo\":null,\r\n            \"cdCargoType\":5,\r\n            \"valueQuantity\":4,\r\n            \"valueGrossWeight\":4.44,\r\n            \"valueCubage\":350.11,\r\n            \"valueLength\":4.44,\r\n            \"valueHeight\":4.44,\r\n            \"valueWidth\":4.44,\r\n            \"valueDiameter\":4.44,\r\n            \"isStacked\":false\r\n         }\r\n      ],\r\n      \"vlCwPurchase\":58351.666666666664,\r\n      \"vlCwSale\":58351.666666666664\r\n   },\r\n   \"transitTime\":444,\r\n   \"idFrequency\":1,\r\n   \"route\":\"444\",\r\n   \"freeTime\":false,\r\n   \"recurrency\":1,\r\n   \"weeklyRecurrency\":\"\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://192.168.15.21:52282/proposalimportfreight",
+													"protocol": "http",
+													"host": [
+														"192",
+														"168",
+														"15",
+														"21"
+													],
+													"port": "52282",
+													"path": [
+														"proposalimportfreight"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Proposal - Filter",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "{{token_dev}}",
+														"type": "default"
+													}
+												],
+												"url": {
+													"raw": "http://192.168.15.21:63015/proposal/filter?page=0&size=50&direction=ASC&orderByList=idBusinessPartnerCostumer",
+													"protocol": "http",
+													"host": [
+														"192",
+														"168",
+														"15",
+														"21"
+													],
+													"port": "63015",
+													"path": [
+														"proposal",
+														"filter"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"key": "size",
+															"value": "50"
+														},
+														{
+															"key": "direction",
+															"value": "ASC"
+														},
+														{
+															"key": "orderByList",
+															"value": "idBusinessPartnerCostumer"
+														},
+														{
+															"key": "idBusinessPartnerCostumer",
+															"value": "12",
+															"disabled": true
+														},
+														{
+															"key": "referenceClientProposal",
+															"value": "12",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "SiriusConnectorAPI",
+					"item": [
+						{
+							"name": "Validate User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.21.15:56512/public/user/email/alessandromariano@fiorde.com.br",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"21",
+										"15"
+									],
+									"port": "56512",
+									"path": [
+										"public",
+										"user",
+										"email",
+										"alessandromariano@fiorde.com.br"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"alessandro.mariano@hotmail.com\",\r\n\t\"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.21.15:56512/public/user",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"21",
+										"15"
+									],
+									"port": "56512",
+									"path": [
+										"public",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SiriusTariffAPI",
+					"item": [
+						{
+							"name": "Ping",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token_dev}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://192.168.15.21:56496/tariff/ping?",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"15",
+										"21"
+									],
+									"port": "56496",
+									"path": [
+										"tariff",
+										"ping"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Keycloak",
+					"item": [
+						{
+							"name": "Valida Email",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.15.21:56284/public/user/email/fernandosilva.partner@fiorde.com.br",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"15",
+										"21"
+									],
+									"port": "56284",
+									"path": [
+										"public",
+										"user",
+										"email",
+										"fernandosilva.partner@fiorde.com.br"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Teste ELK",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token_dev}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ping"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const options = {",
+							" url:  'https://qa.siriuslog.com/auth/realms/sirius-platform/protocol/openid-connect/token',",
+							" method: 'POST',",
+							" header: {",
+							"   'Accept': '*/*',",
+							"   'Content-Type': 'application/x-www-form-urlencoded',",
+							" },",
+							" body: {",
+							"   mode: 'urlencoded',",
+							"   urlencoded : [",
+							"     { key: 'grant_type', value: 'password'},",
+							"     { key: 'client_id', value: 'sirius-gateway-server-client'},",
+							"     { key: 'client_secret', value: '99d3da39-ec3a-4084-a3b8-fa5da6143d67'},",
+							"     { key: 'username', value: 'dev'},",
+							"     { key: 'password', value: '123456'},",
+							"   ]",
+							" }",
+							"};",
+							"pm.sendRequest(options, function (err, res) {",
+							" pm.environment.set(\"token_dev\",\"Bearer \" + res.json().access_token);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "QA",
+			"item": [
+				{
+					"name": "SiriusBusinessPartnerAPI",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token_qa}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://ec2-54-94-40-246.sa-east-1.compute.amazonaws.com:8761/sirius-master-data-api/currencies",
+									"protocol": "http",
+									"host": [
+										"ec2-54-94-40-246",
+										"sa-east-1",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "8761",
+									"path": [
+										"sirius-master-data-api",
+										"currencies"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SiriusBusinessProposalAPI",
+					"item": [
+						{
+							"name": "Cost",
+							"item": [
+								{
+									"name": "Cost - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-business-proposal-api/costs",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-business-proposal-api",
+												"costs"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cost - Find One",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-business-proposal-api/costs/1",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-business-proposal-api",
+												"costs",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Proposal - Filter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token_qa}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "https://qa.siriuslog.com/gateway/sirius-business-proposal-api/proposal/filter?page=0&size=10&direction=ASC&orderByList=openingDate",
+									"protocol": "https",
+									"host": [
+										"qa",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"gateway",
+										"sirius-business-proposal-api",
+										"proposal",
+										"filter"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										},
+										{
+											"key": "direction",
+											"value": "ASC"
+										},
+										{
+											"key": "orderByList",
+											"value": "openingDate"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SiriusMasterDataAPI",
+					"item": [
+						{
+							"name": "Currency",
+							"item": [
+								{
+									"name": "Currency - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://qa.siriuslog.com/gateway/sirius-master-data-api/currencies",
+											"protocol": "https",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"currencies"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "OriginDestination",
+							"item": [
+								{
+									"name": "OriginDestination - List",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://ec2-54-94-40-246.sa-east-1.compute.amazonaws.com/sirius-master-data-api/origins/destinations/",
+											"protocol": "http",
+											"host": [
+												"ec2-54-94-40-246",
+												"sa-east-1",
+												"compute",
+												"amazonaws",
+												"com"
+											],
+											"path": [
+												"sirius-master-data-api",
+												"origins",
+												"destinations",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OriginDestination - findOne",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-master-data-api/origins/destinations/AAB",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"origins",
+												"destinations",
+												"AAB"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Transport",
+							"item": [
+								{
+									"name": "Transport - List",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"LAND\",\r\n    \"description\": \"Rodoviário\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-master-data-api/transport",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"transport"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Incoterm",
+							"item": [
+								{
+									"name": "Incoterm - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-master-data-api/incoterms",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"incoterms"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "KeyCloak",
+					"item": [
+						{
+							"name": "Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlaTJ0b19qbmNjYy1SRlg5czhrM2c0YVhZUkZZV2tlQ1ZFVTNsUGZVdjR3In0.eyJleHAiOjE2NDM0MDMwMTAsImlhdCI6MTY0MzQwMjcxMCwianRpIjoiYzJjNmFjNWEtZGY5Mi00YTFkLTg1ZmEtY2FkNzgwMjRkOWVlIiwiaXNzIjoiaHR0cDovL2VjMi01NC05NC00MC0yNDYuc2EtZWFzdC0xLmNvbXB1dGUuYW1hem9uYXdzLmNvbS9hdXRoL3JlYWxtcy9zaXJpdXMtcGxhdGZvcm0iLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiYjVkMTlmODUtZWIxMi00Y2UzLTg5ZjYtOTQ0ZTM3NGQwZDI2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLW1pY3JvLWdhdGV3YXkiLCJzZXNzaW9uX3N0YXRlIjoiNWUxM2M1MDItNGVmNy00NWE4LWJkYzktYWRlMjhlZjMwZmI3IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJzaXJpdXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJicm9rZXIiOnsicm9sZXMiOlsicmVhZC10b2tlbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctYXBwbGljYXRpb25zIiwidmlldy1jb25zZW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJtYW5hZ2UtY29uc2VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkRldiBTdXBlcmlvciIsInByZWZlcnJlZF91c2VybmFtZSI6ImRldiIsImdpdmVuX25hbWUiOiJEZXYiLCJsb2NhbGUiOiJwdCIsImZhbWlseV9uYW1lIjoiU3VwZXJpb3IifQ.BGgy1LRFjNxkd9YCKIz_r1EoYZvpRhbU7IPaLZHXeQMXCfH0VCQ7rPV10Xd0hewvkbNGmjbA8m3Wg0_EU_vBMRJzU73rXbyp2WyaogMyE4ha12wTjzSQwe7FJ0V56A5drGlWYMtGL-K6WsN64rE4XuPGBzjDzGXRIS55VSKBFSSXc47RG350y-sSkwR7qMd4VBVVWFt5xy3KwljAP3DXp3mieEazrfGZbRzJQ4CM4qnPkQdtERtNTRyqbRcJCLh2Bebr-Tfm7b7gDkjaiDAVMZOpPSzQlkv9-3e2F77_qUYizA_fxTiT-HQQyfHJ8zkh8IsS3JHRDprEqR2qIm7-3w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "sirius-connector-api-client",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "e4852cf2-a664-41db-94a7-9fa6a50c5abf",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "alessandromariano@fiorde.com.br",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://qa.siriuslog.com/auth/realms/sirius-platform/protocol/openid-connect/token",
+									"protocol": "https",
+									"host": [
+										"qa",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"auth",
+										"realms",
+										"sirius-platform",
+										"protocol",
+										"openid-connect",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Eureka",
+					"item": [
+						{
+							"name": "Eureka - List App",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://admin:123456@qa.siriuslog.com/eureka/status",
+									"protocol": "http",
+									"auth": {
+										"user": "admin",
+										"password": "123456"
+									},
+									"host": [
+										"qa",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"eureka",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SiriusConnectorAPI",
+					"item": [
+						{
+							"name": "Validate User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://qa.siriuslog.com/gateway/sirius-connector-api/public/user/email/alessandromariano@fiorde.com.br",
+									"protocol": "https",
+									"host": [
+										"qa",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"gateway",
+										"sirius-connector-api",
+										"public",
+										"user",
+										"email",
+										"alessandromariano@fiorde.com.br"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"alessandro.mariano@hotmail.com\",\r\n\t\"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://qa.siriuslog.com/gateway/sirius-connector-api/public/user",
+									"protocol": "https",
+									"host": [
+										"qa",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"gateway",
+										"sirius-connector-api",
+										"public",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SiriusTariffAPI",
+					"item": [
+						{
+							"name": "Ping",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token_qa}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "https://qa.siriuslog.com/gateway/sirius-tariff-api/tariff/ping",
+									"protocol": "https",
+									"host": [
+										"qa",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"gateway",
+										"sirius-tariff-api",
+										"tariff",
+										"ping"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const options = {",
+							" url:  'https://qa.siriuslog.com/auth/realms/sirius-platform/protocol/openid-connect/token',",
+							" method: 'POST',",
+							" header: {",
+							"   'Accept': '*/*',",
+							"   'Content-Type': 'application/x-www-form-urlencoded',",
+							" },",
+							" body: {",
+							"   mode: 'urlencoded',",
+							"   urlencoded : [",
+							"     { key: 'grant_type', value: 'password'},",
+							"     { key: 'client_id', value: 'sirius-gateway-server-client'},",
+							"     { key: 'client_secret', value: '99d3da39-ec3a-4084-a3b8-fa5da6143d67'},",
+							"     { key: 'username', value: 'alessandromariano@fiorde.com.br'},",
+							"     { key: 'password', value: '123456'},",
+							"   ]",
+							" }",
+							"};",
+							"pm.sendRequest(options, function (err, res) {",
+							" pm.environment.set(\"token_qa\",\"Bearer \" + res.json().access_token);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "PRD",
+			"item": [
+				{
+					"name": "SiriusBusinessPartnerAPI",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SiriusBusinessProposalAPI",
+					"item": [
+						{
+							"name": "Cost",
+							"item": [
+								{
+									"name": "Cost - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-business-proposal-api/costs",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-business-proposal-api",
+												"costs"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "SiriusMasterDataAPI",
+					"item": [
+						{
+							"name": "Currency",
+							"item": [
+								{
+									"name": "Currency - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_prd}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://siriuslog.com/gateway/sirius-master-data-api/currencies",
+											"protocol": "https",
+											"host": [
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"currencies"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "OriginDestination",
+							"item": [
+								{
+									"name": "OriginDestination - List",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://ec2-54-94-40-246.sa-east-1.compute.amazonaws.com/sirius-master-data-api/origins/destinations/",
+											"protocol": "http",
+											"host": [
+												"ec2-54-94-40-246",
+												"sa-east-1",
+												"compute",
+												"amazonaws",
+												"com"
+											],
+											"path": [
+												"sirius-master-data-api",
+												"origins",
+												"destinations",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OriginDestination - findOne",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-master-data-api/origins/destinations/AAB",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"origins",
+												"destinations",
+												"AAB"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Transport",
+							"item": [
+								{
+									"name": "Transport - List",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"LAND\",\r\n    \"description\": \"Rodoviário\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-master-data-api/transport",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"transport"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Incoterm",
+							"item": [
+								{
+									"name": "Incoterm - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_qa}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-master-data-api/incoterms",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"incoterms"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "KeyCloak",
+					"item": [
+						{
+							"name": "Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlaTJ0b19qbmNjYy1SRlg5czhrM2c0YVhZUkZZV2tlQ1ZFVTNsUGZVdjR3In0.eyJleHAiOjE2NDM0MDMwMTAsImlhdCI6MTY0MzQwMjcxMCwianRpIjoiYzJjNmFjNWEtZGY5Mi00YTFkLTg1ZmEtY2FkNzgwMjRkOWVlIiwiaXNzIjoiaHR0cDovL2VjMi01NC05NC00MC0yNDYuc2EtZWFzdC0xLmNvbXB1dGUuYW1hem9uYXdzLmNvbS9hdXRoL3JlYWxtcy9zaXJpdXMtcGxhdGZvcm0iLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiYjVkMTlmODUtZWIxMi00Y2UzLTg5ZjYtOTQ0ZTM3NGQwZDI2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLW1pY3JvLWdhdGV3YXkiLCJzZXNzaW9uX3N0YXRlIjoiNWUxM2M1MDItNGVmNy00NWE4LWJkYzktYWRlMjhlZjMwZmI3IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJzaXJpdXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJicm9rZXIiOnsicm9sZXMiOlsicmVhZC10b2tlbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctYXBwbGljYXRpb25zIiwidmlldy1jb25zZW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJtYW5hZ2UtY29uc2VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkRldiBTdXBlcmlvciIsInByZWZlcnJlZF91c2VybmFtZSI6ImRldiIsImdpdmVuX25hbWUiOiJEZXYiLCJsb2NhbGUiOiJwdCIsImZhbWlseV9uYW1lIjoiU3VwZXJpb3IifQ.BGgy1LRFjNxkd9YCKIz_r1EoYZvpRhbU7IPaLZHXeQMXCfH0VCQ7rPV10Xd0hewvkbNGmjbA8m3Wg0_EU_vBMRJzU73rXbyp2WyaogMyE4ha12wTjzSQwe7FJ0V56A5drGlWYMtGL-K6WsN64rE4XuPGBzjDzGXRIS55VSKBFSSXc47RG350y-sSkwR7qMd4VBVVWFt5xy3KwljAP3DXp3mieEazrfGZbRzJQ4CM4qnPkQdtERtNTRyqbRcJCLh2Bebr-Tfm7b7gDkjaiDAVMZOpPSzQlkv9-3e2F77_qUYizA_fxTiT-HQQyfHJ8zkh8IsS3JHRDprEqR2qIm7-3w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "sirius-gateway-server-client",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "d6e92e22-55e4-4fe8-b18b-5ea5e16b3345",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "dev",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://www.siriuslog.com/auth/realms/sirius-platform/protocol/openid-connect/token",
+									"protocol": "https",
+									"host": [
+										"www",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"auth",
+										"realms",
+										"sirius-platform",
+										"protocol",
+										"openid-connect",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Eureka",
+					"item": [
+						{
+							"name": "Eureka - List App",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://admin:123456@qa.siriuslog.com/eureka/status",
+									"protocol": "http",
+									"auth": {
+										"user": "admin",
+										"password": "123456"
+									},
+									"host": [
+										"qa",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"eureka",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "UAT",
+			"item": [
+				{
+					"name": "SiriusBusinessPartnerAPI",
+					"item": []
+				},
+				{
+					"name": "SiriusBusinessProposalAPI",
+					"item": [
+						{
+							"name": "Cost",
+							"item": [
+								{
+									"name": "Cost - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_uat}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://uat.siriuslog.com/gateway/sirius-business-proposal-api/costs",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-business-proposal-api",
+												"costs"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "SiriusMasterDataAPI",
+					"item": [
+						{
+							"name": "Currency",
+							"item": [
+								{
+									"name": "Currency - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token_uat}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://uat.siriuslog.com/gateway/sirius-master-data-api/currencies",
+											"protocol": "https",
+											"host": [
+												"uat",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"currencies"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "OriginDestination",
+							"item": [
+								{
+									"name": "OriginDestination - List",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://ec2-54-94-40-246.sa-east-1.compute.amazonaws.com/sirius-master-data-api/origins/destinations/",
+											"protocol": "http",
+											"host": [
+												"ec2-54-94-40-246",
+												"sa-east-1",
+												"compute",
+												"amazonaws",
+												"com"
+											],
+											"path": [
+												"sirius-master-data-api",
+												"origins",
+												"destinations",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OriginDestination - findOne",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://ec2-54-94-40-246.sa-east-1.compute.amazonaws.com/sirius-master-data-api/origins/destinations/AAB",
+											"protocol": "http",
+											"host": [
+												"ec2-54-94-40-246",
+												"sa-east-1",
+												"compute",
+												"amazonaws",
+												"com"
+											],
+											"path": [
+												"sirius-master-data-api",
+												"origins",
+												"destinations",
+												"AAB"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Transport",
+							"item": [
+								{
+									"name": "Transport - List",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"LAND\",\r\n    \"description\": \"Rodoviário\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-master-data-api/transport",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"transport"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Incoterm",
+							"item": [
+								{
+									"name": "Incoterm - List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://qa.siriuslog.com/gateway/sirius-master-data-api/incoterms",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"siriuslog",
+												"com"
+											],
+											"path": [
+												"gateway",
+												"sirius-master-data-api",
+												"incoterms"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "KeyCloak",
+					"item": [
+						{
+							"name": "Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlaTJ0b19qbmNjYy1SRlg5czhrM2c0YVhZUkZZV2tlQ1ZFVTNsUGZVdjR3In0.eyJleHAiOjE2NDM0MDMwMTAsImlhdCI6MTY0MzQwMjcxMCwianRpIjoiYzJjNmFjNWEtZGY5Mi00YTFkLTg1ZmEtY2FkNzgwMjRkOWVlIiwiaXNzIjoiaHR0cDovL2VjMi01NC05NC00MC0yNDYuc2EtZWFzdC0xLmNvbXB1dGUuYW1hem9uYXdzLmNvbS9hdXRoL3JlYWxtcy9zaXJpdXMtcGxhdGZvcm0iLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiYjVkMTlmODUtZWIxMi00Y2UzLTg5ZjYtOTQ0ZTM3NGQwZDI2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic3ByaW5nLW1pY3JvLWdhdGV3YXkiLCJzZXNzaW9uX3N0YXRlIjoiNWUxM2M1MDItNGVmNy00NWE4LWJkYzktYWRlMjhlZjMwZmI3IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJzaXJpdXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJicm9rZXIiOnsicm9sZXMiOlsicmVhZC10b2tlbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctYXBwbGljYXRpb25zIiwidmlldy1jb25zZW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJtYW5hZ2UtY29uc2VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkRldiBTdXBlcmlvciIsInByZWZlcnJlZF91c2VybmFtZSI6ImRldiIsImdpdmVuX25hbWUiOiJEZXYiLCJsb2NhbGUiOiJwdCIsImZhbWlseV9uYW1lIjoiU3VwZXJpb3IifQ.BGgy1LRFjNxkd9YCKIz_r1EoYZvpRhbU7IPaLZHXeQMXCfH0VCQ7rPV10Xd0hewvkbNGmjbA8m3Wg0_EU_vBMRJzU73rXbyp2WyaogMyE4ha12wTjzSQwe7FJ0V56A5drGlWYMtGL-K6WsN64rE4XuPGBzjDzGXRIS55VSKBFSSXc47RG350y-sSkwR7qMd4VBVVWFt5xy3KwljAP3DXp3mieEazrfGZbRzJQ4CM4qnPkQdtERtNTRyqbRcJCLh2Bebr-Tfm7b7gDkjaiDAVMZOpPSzQlkv9-3e2F77_qUYizA_fxTiT-HQQyfHJ8zkh8IsS3JHRDprEqR2qIm7-3w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "sirius-connector-api-client",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "0ececb32-d49b-4c97-b2d9-00f972a6b419",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "sirius_connector_api_user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "aL&9bNSuZ6iO",
+											"type": "text"
+										},
+										{
+											"key": "grant-type",
+											"value": "password",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://uat.siriuslog.com/auth/realms/sirius-platform/protocol/openid-connect/token",
+									"protocol": "https",
+									"host": [
+										"uat",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"auth",
+										"realms",
+										"sirius-platform",
+										"protocol",
+										"openid-connect",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Eureka Copy",
+					"item": [
+						{
+							"name": "Eureka - List App",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://admin:123456@qa.siriuslog.com/eureka/status",
+									"protocol": "http",
+									"auth": {
+										"user": "admin",
+										"password": "123456"
+									},
+									"host": [
+										"qa",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"eureka",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SiriusConnectorAPI",
+					"item": [
+						{
+							"name": "Validate User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://uat.siriuslog.com/gateway/sirius-connector-api/public/user/email/alessandromariano@fiorde.com.br",
+									"protocol": "https",
+									"host": [
+										"uat",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"gateway",
+										"sirius-connector-api",
+										"public",
+										"user",
+										"email",
+										"alessandromariano@fiorde.com.br"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"alessandro.mariano@hotmail.com\",\r\n\t\"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://qa.siriuslog.com/gateway/sirius-connector-api/public/user",
+									"protocol": "https",
+									"host": [
+										"qa",
+										"siriuslog",
+										"com"
+									],
+									"path": [
+										"gateway",
+										"sirius-connector-api",
+										"public",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

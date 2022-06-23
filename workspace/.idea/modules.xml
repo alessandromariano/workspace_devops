@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/sirius-bi/sirius-bi.iml" filepath="$PROJECT_DIR$/sirius-bi/sirius-bi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sirius-business-partner-api/sirius-business-partner-api.iml" filepath="$PROJECT_DIR$/sirius-business-partner-api/sirius-business-partner-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sirius-business-proposal-api/sirius-business-proposal-api.iml" filepath="$PROJECT_DIR$/sirius-business-proposal-api/sirius-business-proposal-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sirius-commons-exception/sirius-commons-exception.iml" filepath="$PROJECT_DIR$/sirius-commons-exception/sirius-commons-exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sirius-commons-utils/sirius-commons-utils.iml" filepath="$PROJECT_DIR$/sirius-commons-utils/sirius-commons-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sirius-connector-api/sirius-connector-api.iml" filepath="$PROJECT_DIR$/sirius-connector-api/sirius-connector-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sirius-master-data-api/sirius-master-data-api.iml" filepath="$PROJECT_DIR$/sirius-master-data-api/sirius-master-data-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sirius-tariff-api/sirius-tariff-api.iml" filepath="$PROJECT_DIR$/sirius-tariff-api/sirius-tariff-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sirius-teste-api/sirius-teste-api.iml" filepath="$PROJECT_DIR$/sirius-teste-api/sirius-teste-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/workspace.iml" filepath="$PROJECT_DIR$/.idea/workspace.iml" />
+    </modules>
+  </component>
+</project>

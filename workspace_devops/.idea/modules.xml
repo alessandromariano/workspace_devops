@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/sirius-config-server/sirius-config-server.iml" filepath="$PROJECT_DIR$/sirius-config-server/sirius-config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sirius-eureka-server/sirius-eureka-server.iml" filepath="$PROJECT_DIR$/sirius-eureka-server/sirius-eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sirius-gateway-server/sirius-gateway-server.iml" filepath="$PROJECT_DIR$/sirius-gateway-server/sirius-gateway-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/workspace_devops.iml" filepath="$PROJECT_DIR$/.idea/workspace_devops.iml" />
+    </modules>
+  </component>
+</project>

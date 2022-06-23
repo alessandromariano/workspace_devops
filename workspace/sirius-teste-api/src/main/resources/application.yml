@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: sirius-teste-api
+    version: '@project.version@'
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss.sssZ
+    time-zone: America/Sao_Paulo
+    locale: pt-BR
+
+logging:
+  file:
+    name: /logs/${spring.application.name}.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: DEBUG
+    org.milyn.edi: INFO
+    com.siriuslog: DEBUG

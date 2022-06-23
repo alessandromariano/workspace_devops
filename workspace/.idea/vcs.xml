@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/sirius-bi" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sirius-business-partner-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sirius-business-proposal-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sirius-commons-exception" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sirius-commons-utils" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sirius-connector-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sirius-master-data-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sirius-tariff-api" vcs="Git" />
+  </component>
+</project>

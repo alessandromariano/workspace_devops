@@ -1,0 +1,202 @@
+Heitor@0502
+--------------------------------------------------- Generate Spring Banner ------------------------------------------
+https://springhow.com/spring-boot-banner-generator/
+
+Banner Style: Standard
+
+---------------------------------------------------------- Link VPN -------------------------------------------------
+https://links.fortinet.com/forticlient/win/vpnagent
+
+login: alessandromariano 
+senha: Amariano&1735$
+
+---------------------------------------------------------- BitBucket ------------------------------------------------
+https://bitbucket.org/fiorde
+
+sistema@fiorde.com.br
+Fi0rde2020%
+
+-------------------------------------------------------- Console AWS ------------------------------------------------
+http://www.aws.com
+https://fiorde.signin.aws.amazon.com/console
+
+conta: 525055031786
+login: alessandro.mariano.adm
+senha: Ale@23021982
+
+--------------------------------------------------------- EC2 AWS ---------------------------------------------------
+QA 
+- Entrypoint - 11.12.11.189 - http://ec2-54-94-40-246.sa-east-1.compute.amazonaws.com
+- Plataforma - 11.12.11.114 - http://ec2-18-228-84-9.sa-east-1.compute.amazonaws.com
+
+UAT
+- Entrypoint - 11.12.11.229 - http://ec2-177-71-134-195.sa-east-1.compute.amazonaws.com
+- Plataforma - 11.12.11.217 - http://ec2-54-232-40-245.sa-east-1.compute.amazonaws.com
+
+PROD
+- Entrypoint - 11.12.11.46  - http://ec2-18-231-109-189.sa-east-1.compute.amazonaws.com
+- Plataforma - 11.12.11.149 - http://ec2-54-94-113-136.sa-east-1.compute.amazonaws.com
+
+Usuario: alessandromariano  
+Senha:   Fz%#89WoAQhz$%!r
+
+----------------------------------------------------------- RDS AWS --------------------------------------------------
+QA
+	Nome: db-sirius-plt-qa
+	Endpoint: 11.12.12.180 - db-sirius-plt-qa.cb5e502rvknf.sa-east-1.rds.amazonaws.com
+	Master username: siriusqa
+	Password: dCSOj%TH*gFE3klC2&sDp
+	DB Class: db.t3.small
+
+UAT
+	Nome: db-sirius-plt-uat
+	Endpoint: 11.12.11.185 - db-sirius-plt-uat.cb5e502rvknf.sa-east-1.rds.amazonaws.com
+	Master username:  siriusuat
+	Password: $OAn0hxTsMBl^keyp%!Ch
+	DB Class: db.t3.small
+	
+PROD
+	Nome: db-sirius-plt-prd
+	Endpoint: 11.12.11.67  - db-sirius-plt-prd.cb5e502rvknf.sa-east-1.rds.amazonaws.com
+	Master username:  siriusprd
+	Password: CSOj%TxTsMBlC2&sDhxTA
+	DB Class: db.t3.small
+
+
+RDS - db.t3.small - db-sirius-plt-prd
+Banco MultiAZ
+user: admin
+Pass: Fu$DlWUOev3t
+
+
+---------------------------------------------------------- KEY CLOAK --------------------------------------------------
+QA
+	https://qa.siriuslog.com/auth
+	admin
+	sirius*201@pltr
+
+UAT
+	https://uat.siriuslog.com/auth
+	admin
+	sirius*201@pltr
+	
+PRD
+	https://siriuslog.com/auth
+	admin
+	sirius*201@pltr	
+
+---------------------------------------------------------- EUREKA -----------------------------------------------------
+PLT QA
+	http://qa.siriuslog.com/eureka
+	admin
+	123456
+
+PLT UAT
+	http://uat.siriuslog.com/eureka
+	admin
+	123456
+	
+COMEX QA
+	https://sysfiordewsqa.fiorde.com.br/eureka
+	fiorde
+	stng*2363	
+
+-----------------------------------------------------------------------------------------------------------------------
+
+sudo systemctl restart sirius-master-data-api.service
+sudo journalctl -u sirius-master-data-api --follow
+
+
+/etc/systemd/system
+sudo systemctl --type=service
+sudo systemctl daemon-reload
+
+
+/etc/nginx/sites-enabled/fiorde.conf
+
+
+------------------------------------------------------------------------------------------------------------------------
+QA
+
+sirius_connector_api_user
+LP5j6eScfr!0
+
+sirius_gateway_user
+Bi2*zf$51Eb0
+
+
+UAT
+sirius_connector_api_user
+aL&9bNSuZ6iO
+
+sirius_gateway_user
+CaDq!fg3!Pou
+
+PRD
+sirius_connector_api_user
+QD6QAbE@wbYl
+
+sirius_gateway_user
+LjaTN8r9!xhH
+
+
+
+
+docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest -p 3306:3306
+
+
+
+
+Jenkins
+user: devops
+pass: fiorde2022
+
+Sonar
+user: admin 
+pass: fiorde2022
+
+ELK
+user: elastic
+pass: changeme
+
+
+sistema@fiorde.com.br
+Fi0rde2020%
+
+
+
+
+c1918fc8-5201-4938-98f8-1c0ff5304e86	alessandromariano@fiorde.com.br			alessandromariano@fiorde.com.br			Mariano	Alessandro	Edit	Impersonate	Delete
+4fc53e46-d8ae-4338-ba77-e51362fbfadc	barbaramorais@fiorde.com.br				barbaramorais@fiorde.com.br				Morais	Barbara		Edit	Impersonate	Delete
+75dafeaa-13cf-4fff-8d68-4d40cd09d307	christophersouza.partner@fiorde.com.br	christophersouza.partner@fiorde.com.br	Souza	Christopher	Edit	Impersonate	Delete
+115ae4f0-0f0e-4043-9e40-076fc0a9cced	crislainetripole.partner@fiorde.com.br	crislainetripole.partner@fiorde.com.br	Tripole	Crislaine	Edit	Impersonate	Delete
+33c3e1cd-af29-41ee-bfcd-d071d95a1f2a	erikafreire.partner@fiorde.com.br		erikafreire.partner@fiorde.com.br		Freire	Erika		Edit	Impersonate	Delete
+bf06bda7-98ed-45ba-b4f5-a86add5be373	fernandosilva.partner@fiorde.com.br		fernandosilva.partner@fiorde.com.br		Becker	Fernando	Edit	Impersonate	Delete
+a1e3a6e2-5e3c-4eda-bd58-f439216ef7ee	jessicaandrade.partner@fiorde.com.br	jessicaandrade.partner@fiorde.com.br	Andrade	Jéssica		Edit	Impersonate	Delete
+b37c6b2c-8867-4469-bf8c-0a69dcc8a655	julianapatrignani@fiorde.com.br			julianapatrignani@fiorde.com.br			Patrignani	Juliana	Edit	Impersonate	Delete
+b3a33edf-5d1c-4b16-97c1-f17c5d350da7	juliomoraes.partner@fiorde.com.br		juliomoraes.partner@fiorde.com.br		Moraes	Julio		Edit	Impersonate	Delete
+827368cd-9d87-4fba-9571-4946fd5bb7d3	larissafalcao@fiorde.com.br				larissafalcao@fiorde.com.br				Falcao	Larissa		Edit	Impersonate	Delete
+ecf080fd-8de7-4abd-9415-c2deb7bcb676	lucasmarques@fiorde.com.br				lucasmarques@fiorde.com.br				Marques	Lucas		Edit	Impersonate	Delete
+606f5c43-f06d-47b5-a0c3-8b2aa5755d99	rodrigowintrich@fiorde.com.br			rodrigowintrich@fiorde.com.br			Wintrich	Rodrigo	Edit	Impersonate	Delete
+d8cf4d81-c302-4496-9ccd-61bc6985e1c3	sirius_connector_api_user				sirius_connector_api@fiorde.com.br		API	Sirius Conector	Edit	Impersonate	Delete
+61520624-6433-4cf5-9c95-cc3aeed26af7	sirius_platform_fe_user																				Edit	Impersonate	Delete
+
+	
+SIRIUS_APPLICATION			False		Edit	Delete
+SIRIUS_COMEX				False		Edit	Delete
+SIRIUS_KEYCLOAK				True		Edit	Delete
+SIRIUS_LN					False		Edit	Delete
+SIRIUS_MODULE_COMMERCIAL	False		Edit	Delete
+SIRIUS_MODULE_TARIFF		False		Edit	Delete
+
+
+docker run --name mysql -p 3306:3306 -d mysql:latest -e MYSQL_ROOT_PASSWORD=root 
+docker run --name eureka -p 8761:8761 -d springcloud/eureka:latest
+docker run --name zipkin -p 9411:9411 -d openzipkin/zipkin:latest
+
+docker run --name eureka -p 8761:8761 -d huangp6/eureka
+
+docker run --name keycloak -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -d jboss/keycloak:latest
+		/opt/jboss/keycloak/standalone/configuration/keycloak-add-user.json
+

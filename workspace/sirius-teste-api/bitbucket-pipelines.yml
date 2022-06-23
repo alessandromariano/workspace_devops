@@ -1,0 +1,100 @@
+definitions:
+  steps:
+    - step: &build-artifact
+        name: Build Artifact
+        image: maven:3.6.3-adoptopenjdk-8
+        caches:
+          - maven
+        script:
+          # adding user for authentication with private repository
+          - echo $SETTINGS_XML > settings.xml
+          - cp -r settings.xml /usr/share/maven/conf/
+          # building jar
+          - mvn clean install
+        artifacts:
+          - target/*.jar
+          - target/*.war
+
+    - step: &setup-environment
+        name: Setup Environment
+        script:
+          - cat << 'EOF' > tmp
+          - export ARTIFACT_DIR="target"
+          - export ARTIFACT="`ls -1 ${ARTIFACT_DIR}/?(*.jar|*.war) | xargs -0 basename`"
+          - export ARTIFACT_BACKUP="$(date +%Y-%m-%d-%H:%M)-${ARTIFACT}"
+          - export DEPLOYMENT_USER="app"
+          - export HOME_DIR="/home/${DEPLOYMENT_USER}"
+          - export DEPLOYMENT_DIR="${HOME_DIR}/${BITBUCKET_REPO_SLUG}"
+          - export BACKUP_DIR="${DEPLOYMENT_DIR}/backup"
+          - export SERVICE_NAME="`basename ${DEPLOYMENT_DIR}`"
+          - 'EOF'
+          - cat tmp | sed -r 's/^(printf.+)$//' | awk NF > environment
+        artifacts:
+          - environment
+
+    - step: &deploy-artifact
+        name: Deploy Artifact to Server
+        script:
+          - apt-get update && apt-get -y install gettext-base
+          # loading pipeline environment variables
+          - shopt -s extglob nullglob
+          - source environment
+          - envsubst < environment > vars
+          # re/creating deployment directories on the server
+          - ssh ${DEPLOYMENT_USER}@${HOST_IP} "mkdir -p {${DEPLOYMENT_DIR},${ARTIFACT_DIR}}"
+          # sending artifact to server
+          - scp ${ARTIFACT_DIR}/${ARTIFACT} ${DEPLOYMENT_USER}@${HOST_IP}:${ARTIFACT_DIR}
+          # sending environment variables file to server
+          - scp vars ${DEPLOYMENT_USER}@${HOST_IP}:${HOME_DIR}
+          # connecting to server
+          - ssh ${DEPLOYMENT_USER}@${HOST_IP} << 'EOF'
+          # loading environment variables in the server
+          - shopt -s extglob nullglob
+          - source vars
+          # re/creating deployment/backup directories
+          - sudo mkdir -p ${BACKUP_DIR}
+          # re/applying the right permissions
+          - sudo chown -R ${DEPLOYMENT_USER}:${DEPLOYMENT_USER} ${DEPLOYMENT_DIR} ${BACKUP_DIR}
+          # creating backup of current deployed artifact
+          - mv -f ${DEPLOYMENT_DIR}/${ARTIFACT} ${BACKUP_DIR}/${ARTIFACT_BACKUP}
+          # deploying the new artifact
+          - mv ${ARTIFACT_DIR}/${ARTIFACT} ${DEPLOYMENT_DIR}
+          # restarting service
+          - sudo systemctl restart ${SERVICE_NAME}
+          # removing old backups, preserving the last 3, and deployment leftovers
+          - export BACKUPS=( *-${ARTIFACT_BACKUP} )
+          - export BACKUPS=( $(printf "%s\n" ${BACKUPS[@]} | sort -r ) )
+          - if [ ${#BACKUPS[@]} -gt 3 ]; then export OLD_BACKUPS=( ${BACKUPS[@]:3} ) && rm ${OLD_BACKUPS[@]}; fi
+          - rm ${HOME_DIR}/vars
+          - rm -r ${HOME_DIR}/${ARTIFACT_DIR}
+          - 'EOF'
+
+pipelines:
+  branches:
+    qa:
+      - step:
+          <<: *build-artifact
+      - step:
+          <<: *setup-environment
+      - step:
+          deployment: qa
+          <<: *deploy-artifact
+
+    uat:
+      - step:
+          <<: *build-artifact
+      - step:
+          <<: *setup-environment
+      - step:
+          deployment: uat
+          <<: *deploy-artifact
+
+  custom:
+    build-deploy-prod:
+      - step:
+          <<: *build-artifact
+      - step:
+          <<: *setup-environment
+      - step:
+          deployment: prod
+          <<: *deploy-artifact
